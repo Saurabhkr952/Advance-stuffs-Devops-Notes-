@@ -4,7 +4,7 @@ This repository contains blogs,videos etc
 
 
 2. [Microservices March 2022: Kubernetes Networking](https://www.f5.com/company/blog/nginx/microservices-march-architecting-kubernetes-clusters-for-high-traffic-websites)
-- Unit 1: [Architecting Kubernetes Clusters for High‑Traffic Websites]([https://www.f5.com/company/blog/nginx/microservices-march-architecting-kubernetes-clusters-for-high-traffic-websites](https://www.f5.com/company/blog/nginx/microservices-march-exposing-apis-in-kubernetes)) 
+- Unit 1: [Architecting Kubernetes Clusters for High‑Traffic Websites](https://www.f5.com/company/blog/nginx/microservices-march-architecting-kubernetes-clusters-for-high-traffic-websites)
 - Unit 2: [Exposing APIs in Kubernetes](https://www.f5.com/company/blog/nginx/microservices-march-microservices-security-pattern-in-kubernetes)
 - Unit 3: [Microservices Security Pattern in Kubernetes](https://www.f5.com/company/blog/nginx/microservices-march-microservices-security-pattern-in-kubernetes)
 - Unit 4: [Advanced Kubernetes Deployment Strategies](https://www.f5.com/company/blog/nginx/microservices-march-advanced-kubernetes-deployment-strategies)
