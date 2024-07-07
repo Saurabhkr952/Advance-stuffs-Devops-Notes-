@@ -8,3 +8,12 @@ This repository contains blogs,videos etc
 - Unit 2: [Exposing APIs in Kubernetes](https://www.f5.com/company/blog/nginx/microservices-march-microservices-security-pattern-in-kubernetes)
 - Unit 3: [Microservices Security Pattern in Kubernetes](https://www.f5.com/company/blog/nginx/microservices-march-microservices-security-pattern-in-kubernetes)
 - Unit 4: [Advanced Kubernetes Deployment Strategies](https://www.f5.com/company/blog/nginx/microservices-march-advanced-kubernetes-deployment-strategies)
+
+
+# USE configmap and secrets as as volumemount and use `readOnly: true` to only read from volumes. 
+# and if you use configmap as env variable use `immutable: true` to protects you from accidental (or unwanted) updates that could cause applications outages.
+
+
+## secret rotation - big company use to do it. to make more secure their sensitive information to make it more secure. withing 15-30 days
+## best use external-secret-operator -----> for store kubernetes secrets.l
+
