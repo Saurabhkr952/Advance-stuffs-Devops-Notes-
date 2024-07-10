@@ -17,3 +17,7 @@ This repository contains blogs,videos etc
 ## secret rotation - big company use to do it. to make more secure their sensitive information to make it more secure. withing 15-30 days
 ## best use external-secret-operator -----> for store kubernetes secrets.l
 
+
+### Aws graviton 
+[AWS GRAVITON](https://www.honeycomb.io/blog/engineering-teams-should-embrace-graviton4)
+
