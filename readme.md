@@ -35,3 +35,4 @@ This repository contains blogs,videos etc
 - Then we have to modify the ingress file to add the secret.
 
 
+[DNS RECORDS- A,AAAA,CNAME](https://www.whizlabs.com/blog/dns-records/?hl=en-IN)
