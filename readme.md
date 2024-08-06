@@ -10,29 +10,47 @@ This repository contains blogs,videos etc
 - Unit 4: [Advanced Kubernetes Deployment Strategies](https://www.f5.com/company/blog/nginx/microservices-march-advanced-kubernetes-deployment-strategies)
 
 
-### USE configmap and secrets as as volumemount and use `readOnly: true` to only read from volumes. 
-### and if you use configmap as env variable use `immutable: true` to protects you from accidental (or unwanted) updates that could cause applications outages.
+#### USE configmap and secrets as as volumemount and use `readOnly: true` to only read from volumes. 
+#### and if you use configmap as env variable use `immutable: true` to protects you from accidental (or unwanted) updates that could cause applications outages.
 
 
-### secret rotation - big company use to do it. to make more secure their sensitive information to make it more secure. withing 15-30 days
-### best use external-secret-operator -----> for store kubernetes secrets.l
+#### secret rotation - big company use to do it. to make more secure their sensitive information to make it more secure. withing 15-30 days
+#### best use external-secret-operator -----> for store kubernetes secrets.
 
 
-### Aws graviton 
+#### Aws graviton 
 [AWS GRAVITON](https://www.honeycomb.io/blog/engineering-teams-should-embrace-graviton4)
 
-### tweak loadbalancer based on latency, input or output, based on topology( geo location) ---> advance project
+#### tweak loadbalancer based on latency, input or output, based on topology( geo location) ---> advance project
 
-###  When the ingress controller gets configured. It creates a layer 4 loadbalancer in the cloud. We need to add the loadbalancer ip address in the domain registrar website to map the domain name and add 'A record'.
+####  When the ingress controller gets configured. It creates a layer 4 loadbalancer in the cloud. We need to add the loadbalancer ip address in the domain registrar website to map the domain name and add 'A record'.
 - Every ingress controller only handle layer 7 traffic.
 - Learn about gateway api ---> futureee
 
 
-### Cert manager enable https
+#### Cert manager enable https
 - Download ca files
 - Create proxy from clusterissuer/issuer
 - Create certificate request which hits then it signed from the server and then it stored on the secret. 
 - Then we have to modify the ingress file to add the secret.
 
 
+### DNS RECORDS- A,AAAA,CNAME
 [DNS RECORDS- A,AAAA,CNAME](https://www.whizlabs.com/blog/dns-records/?hl=en-IN)
+
+
+### 3 pillars of observaiblity 
+- **Metrics, Logs, Traces & Profiling**
+  
+- Let's talk about Traces ---------> specifically opentelemetry(Distributed tracing, vendor agnostic)
+- Instrument in source code with opentelemetry & send traces to collectors.(eg. Jaeger).
+
+**Benefits:**
+- **performance & Latency optimization & identify bottleneck**: Visualize and monitor the time taken to communicate with services in a distributed system.
+- **Error Tracking**: It captures errors and exceptions within spans, allowing you to see where failures or issues arise.
+    eg.  For example, if a request goes through services A → B → C → D, and an error occurs between B and C, you can easily see and pinpoint this in the trace by visualization.
+    
+
+    
+
+
