@@ -50,7 +50,19 @@ This repository contains blogs,videos etc
 - **Error Tracking**: It captures errors and exceptions within spans, allowing you to see where failures or issues arise.
     eg.  For example, if a request goes through services A → B → C → D, and an error occurs between B and C, you can easily see and pinpoint this in the trace by visualization.
     
+- jaeger uses otel collector by default. It migrates from its own collector.
 
+### Gateway API Kubernetes 
+
+#### Gateway Class
+it's just like storage class.
+
+#### Gateway 
+you will get a external loadbalancer when you create gateway
+
+### Route
+
+you will write rule how to route traffic. 
     
 
 
