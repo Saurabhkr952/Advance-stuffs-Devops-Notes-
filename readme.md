@@ -61,8 +61,14 @@ it's just like storage class.
 you will get a external loadbalancer when you create gateway
 
 ### Route
-
 you will write rule how to route traffic. 
-    
 
+
+##### what is tls & How does it link to HTTPS?
+- It's an improved version of the SSL.
+- Hypertext Transfer Protocol Secure (HTTPS) which uses SSL/TLS to encrypt the data exchanged between the browser and server. When a website uses HTTPS:
+- The browser and server establish a secure connection using SSL/TLS.    
+
+##### what is tls certificate ?
+- It is a digital certificate that verifies the identity of a website or server and ensures a secure connection. It's issued by a trusted Certificate Authority (CA).
 
