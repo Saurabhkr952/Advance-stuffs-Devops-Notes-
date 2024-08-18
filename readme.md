@@ -50,16 +50,13 @@ This repository contains blogs,videos etc
 - **Error Tracking**: It captures errors and exceptions within spans, allowing you to see where failures or issues arise.
     eg.  For example, if a request goes through services A → B → C → D, and an error occurs between B and C, you can easily see and pinpoint this in the trace by visualization.
     
-- jaeger uses otel collector by default. It migrates from its own collector.
+- **jaeger** uses otel collector by default. It migrates from its own collector.
 
 ### Gateway API Kubernetes 
-
 #### Gateway Class
 it's just like storage class.
-
 #### Gateway 
 you will get a external loadbalancer when you create gateway
-
 ### Route
 you will write rule how to route traffic. 
 
@@ -68,7 +65,8 @@ you will write rule how to route traffic.
 - It's an improved version of the SSL.
 - Hypertext Transfer Protocol Secure (HTTPS) which uses SSL/TLS to encrypt the data exchanged between the browser and server. When a website uses HTTPS:
 - The browser and server establish a secure connection using SSL/TLS.    
-
 ##### what is tls certificate ?
 - It is a digital certificate that verifies the identity of a website or server and ensures a secure connection. It's issued by a trusted Certificate Authority (CA).
 
+
+#### Database Schema Management for Kubernetes -----> SchemaHero
