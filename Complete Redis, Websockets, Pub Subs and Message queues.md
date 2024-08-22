@@ -51,3 +51,22 @@ LeetCode uses HTTP(**polling**- means asking from server again and again that if
 
 
 Where are queue stored ? ====>  Redis, RabbitMQ
+
+### REDIS:
+**DOCS:** [Lists-data-types(LPUSH----->RPOP,BLPOP....etc)](https://redis.io/docs/latest/develop/data-types/lists/)
+Also use `redis-cli` to connect to server.
+
+### To Store a JSON Object on the Left Side of a **List** Named **QUEUE**
+```json
+LPUSH QUEUE '{ "name": "Saurabh", "age": 23 }'
+```
+
+### How Does it look like
+
+![redis-screenshot](/assets/redis-ss.png)
+
+### To run redis-stack using Docker
+```sh
+ docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest 
+```
+
