@@ -12,7 +12,7 @@
 
 
 ## Harikat-Leetcode-system-design
-[Leetcode-system-design](/assets/leetcode-harikat.png)
+![Leetcode-system-design](/assets/leetcode-harikat.png)
 
 ### my thoughts on leetcode
 
@@ -20,7 +20,7 @@ LeetCode uses HTTP(**polling**- means asking from server again and again that if
 
 ### REDIS - It's an open-source, in-memory data structure used as a database, cache, and message broker.
 
-[redis](/assets/redis.png)
+![redis](/assets/redis.png)
 
 **Scenario**: Your application has a high-traffic endpoint like `/track` that retrieves tracking information from PostgreSQL. When 1000 requests hit this endpoint, the load on your PostgreSQL database increases significantly, potentially leading to performance issues.
 
