@@ -57,7 +57,7 @@ Where are queue stored ? ====>  Redis, RabbitMQ
 Also use `redis-cli` to connect to server.
 
 ### To Store a JSON Object on the Left Side of a **List** Named **QUEUE**
-```json
+```bash
 LPUSH QUEUE '{ "name": "Saurabh", "age": 23 }'
 ```
 
