@@ -1,10 +1,10 @@
 ## Types of Communication
 
-### Synchronous (Strong coupling)
+### Synchronous (Strong coupling- Real Time Communication)
 1. HTTP (REST/GraphQL)
 2. Websocket (Debatable if sync or async)
 
-### Asynchronous (Weak Coupling)
+### Asynchronous (Weak Coupling- Not Happened in realtime)
 1. Messaging queues
 2. Pub subs
 3. Server-Side Events
@@ -70,3 +70,50 @@ LPUSH QUEUE '{ "name": "Saurabh", "age": 23 }'
  docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest 
 ```
 
+## Apache Kafka
+
+KAFKA SERVER
+   |
+   |__ TOPIC- Represents Logical grouping of message eg. rider-update,hotel-update===> Producers publish messages to a topic based on their needs, and consumers subscribe to topics.
+         |
+         |__ PARTITION- to divide in smaller chunks allow for parallel processing and scalability. . like we use geographic location, north,south to distribute data more efficiently.  
+
+- rabbitMQ, SQS as well as redis uses ====> Queue(data-structure first-in-first-out(FIFO))
+- kafka uses consumer groups. [consumber-group-blog](https://medium.com/javarevisited/kafka-partitions-and-consumer-groups-in-6-mins-9e0e336c6c00)
+- Apache Kafka act as pub/sub but also act as a queue. using consumer group.
+  
+Kafka can emulate queue-like behavior using consumer groups. For instance, if you have a topic with 4 partitions and create a consumer group with 4 consumers, each consumer will be assigned to a specific partition. This setup ensures that each message in a partition is processed by only one consumer, similar to how a traditional queue distributes tasks among workers.
+
+
+
+
+```mermaid
+graph LR
+    Topic[Producer ==>ZOMATO]
+
+    Topic --> P1
+        Topic --> P2
+        Topic --> P3
+        Topic --> P4
+    subgraph Kafka Cluster
+        subgraph TOPIC rider-update
+            P1[SOUTH PARTITION ]
+            P2[NORTH PARTITION]
+            P3[EAST PARTITION]
+            P4[WEST PARTITION]
+        end
+        
+    end
+
+    subgraph Consumer Group
+        C1[Consumer 1]
+        C2[Consumer 2]
+        C3[Consumer 3]
+        C4[Consumer 4]
+    end
+
+    P1 --> C1
+    P2 --> C2
+    P3 --> C3
+    P4 --> C4
+```
