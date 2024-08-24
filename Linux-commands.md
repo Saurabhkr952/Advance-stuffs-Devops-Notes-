@@ -59,8 +59,8 @@ usermod -g QA simpu     # uid=1001(simpu) gid=1002(QA)    groups=1002(QA)
 | Command                         | Description                                                            |
 |---------------------------------|------------------------------------------------------------------------|
 | `find . -name main.tf`          | Search for files and directories                                      |
-| `du -h`                         | Display disk usage of files and of the current working directory       |
-| `du -sh *`                      | Show the file with size in the current working directory               |
+| `du -h`                         | Lists the sizes of all files and directories recursively like (tree)   |
+| `du -sh *`                      | Lists the sizes of each file and directory in the current directory    |
 | `df -h`                         | Display information about disk space usage                            |
 | `tar -xvc file.tar file.txt`    | To create archive file                                                 |
 | `tar -xvf file.tar`             | To unarchive file                                                       |
