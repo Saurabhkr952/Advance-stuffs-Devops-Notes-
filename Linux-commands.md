@@ -66,7 +66,7 @@ usermod -g QA simpu     # uid=1001(simpu) gid=1002(QA)    groups=1002(QA)
 | `tar -xvf file.tar`             | To unarchive file                                                       |
 | `tail -f /var/log/auth.log`     | View file from end of the line & monitor in realtime                   |
 | `netstat`                       | Displays active TCP,UDP connections, ports on which the computer is listening, routing table, network protocol statics |
-| `traceroute`                    | Trace the route packets take to a network host                         |
+| `traceroute`                    | Trace the route packets how data travels on internet from your computer to destination.                        |
 | `nslookup`                      | Query Internet name servers interactively                              |
 | `systemctl`                     | Control and manage systemd services                                   |
 | `journalctl`                    | Query and display messages from the journal                           |
