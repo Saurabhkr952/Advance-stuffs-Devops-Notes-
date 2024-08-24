@@ -67,7 +67,7 @@ usermod -g QA simpu     # uid=1001(simpu) gid=1002(QA)    groups=1002(QA)
 | `tail -f /var/log/auth.log`     | View file from end of the line & monitor in realtime                   |
 | `netstat`                       | Displays active TCP,UDP connections, ports on which the computer is listening, routing table, network protocol statics |
 | `traceroute`                    | Trace the route packets how data travels on internet from your computer to destination.                        |
-| `nslookup`                      | Query Internet name servers interactively                              |
+| `nslookup`                      | Find the IP address associated with a domain name                     |
 | `systemctl`                     | Control and manage systemd services                                   |
 | `journalctl`                    | Query and display messages from the journal                           |
 | `wc -l names.txt`               | Count number of lines                                                  |
@@ -75,12 +75,12 @@ usermod -g QA simpu     # uid=1001(simpu) gid=1002(QA)    groups=1002(QA)
 | `uptime`                        | Show how long the system has been running                             |
 | `ifconfig`                      | Configure network interfaces                                          |
 | `wget`                          | Download files from the web                                           |
-| `awk`                           | Pattern scanning and processing language                              |
-| `sed`                           | Stream editor for filtering and transforming text                     |
+| `awk`                           | used to handle structured data/output                            |
+| `sed`                           | Stream editor used for manipulate text                    |
 | `whoami`                        | Show current logged in user                                           |
 | `lscpu`                         | Display CPU architecture information                                  |
 | `hostname`                      | Show or set the system's hostname                                     |
 | `export`                        | Set environment variables                                             |
-| `env`                           | Display environment variables                                         |
+| `env`                           | Display all environment variables                                     |
 | `curl`                          | Transfer data from or to a server                                    |
-| `top`                           | Display Linux tasks                                                   |
+| `top`                           | Used to show the CPU usage, memory usage, load avg, process, Swap memory |
