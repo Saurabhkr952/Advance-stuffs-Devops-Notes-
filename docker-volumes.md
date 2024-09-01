@@ -5,10 +5,10 @@
 3. **bind**: Bind mounts allow you to map a specific directory or file on your host machine to a directory or file inside the container.   
 
 
-```yaml
+```sh
 docker run -d \
   -it \
   --name devtest \                                    
-  --mount type=bind,source="$(pwd)"/target,target=/app  // create folder inside container named "app"  
-  nginx:latest                                          // create pwd/target folder inside your hosts and mount it with app. 
+  --mount type=bind,source="$(pwd)"/target,target=/app    # create folder inside container named "app"  
+  nginx:latest                                            # create pwd/target folder inside your hosts and mount it with app. 
 ```    
