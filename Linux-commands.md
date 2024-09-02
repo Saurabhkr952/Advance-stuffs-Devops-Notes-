@@ -58,7 +58,8 @@ usermod -g QA simpu     # uid=1001(simpu) gid=1002(QA)    groups=1002(QA)
 
 | Command                         | Description                                                            |
 |---------------------------------|------------------------------------------------------------------------|
-| `find . -name main.tf`          | Search for files and directories                                      |
+| `find ~ -name 'error.sh'`       | Search for files named `error.sh` within the user's home directory and its subdirectories |
+| `find . -name main.tf`          | Search for files and directories in the curent directory                                  |
 | `du -h`                         | Lists the sizes of all files and directories recursively like (tree)   |
 | `du -sh *`                      | Lists the sizes of each file and directory in the current directory    |
 | `df -h`                         | Display information about disk space usage                            |
@@ -75,8 +76,8 @@ usermod -g QA simpu     # uid=1001(simpu) gid=1002(QA)    groups=1002(QA)
 | `uptime`                        | Show how long the system has been running                             |
 | `ifconfig`                      | Configure network interfaces                                          |
 | `wget`                          | Download files from the web                                           |
-| `awk`                           | used to handle structured data/output                            |
-| `sed`                           | Stream editor used for manipulate text                    |
+| `awk`                           | Used to handle structured data/output                                |
+| `sed`                           | Stream editor used to manipulate text                                 |
 | `whoami`                        | Show current logged in user                                           |
 | `lscpu`                         | Display CPU architecture information                                  |
 | `hostname`                      | Show or set the system's hostname                                     |
@@ -84,3 +85,4 @@ usermod -g QA simpu     # uid=1001(simpu) gid=1002(QA)    groups=1002(QA)
 | `env`                           | Display all environment variables                                     |
 | `curl`                          | Transfer data from or to a server                                    |
 | `top`                           | Used to show the CPU usage, memory usage, load avg, process, Swap memory |
+
