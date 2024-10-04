@@ -10,6 +10,16 @@ This repository contains blogs,videos etc
 - Unit 4: [Advanced Kubernetes Deployment Strategies](https://www.f5.com/company/blog/nginx/microservices-march-advanced-kubernetes-deployment-strategies)
 
 
+### Kubeseal has
+- cli(use to encrypt secrets )
+- controller(install in k8s to decrypt secrets) 
+- Also renews keys in 30 
+- Doesn't means that the key rotation. Basically it creates new keys and also stores old key to encrypt new secrets. 
+
+
+Summary: encrypt the secrets & store it in the GitHub and then it can only be decrypted via kubeseal controller
+
+
 #### USE configmap and secrets as as volumemount and use `readOnly: true` to only read from volumes. 
 #### and if you use configmap as env variable use `immutable: true` to protects you from accidental (or unwanted) updates that could cause applications outages.
 
@@ -53,15 +63,6 @@ This repository contains blogs,videos etc
     eg.  For example, if a request goes through services A → B → C → D, and an error occurs between B and C, you can easily see and pinpoint this in the trace by visualization.
     
 - **jaeger** uses otel collector by default. It migrates from its own collector.
-
-### Gateway API Kubernetes 
-#### Gateway Class
-it's just like storage class.
-#### Gateway 
-you will get a external loadbalancer when you create gateway
-### Route
-you will write rule how to route traffic. 
-
 
 ##### what is tls & How does it link to HTTPS?
 - It's an improved version of the SSL.
