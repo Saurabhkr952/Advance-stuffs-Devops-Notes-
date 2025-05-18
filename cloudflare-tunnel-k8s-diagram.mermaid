@@ -1,0 +1,99 @@
+flowchart LR
+    %% Style definitions
+    classDef internet fill:#e9e9e9,stroke:#333,stroke-width:1px
+    classDef cloudflare fill:#f6821f,stroke:#333,stroke-width:1px,color:white
+    classDef tunnel fill:#2fb0ff,stroke:#333,stroke-width:1px,color:white,stroke-dasharray: 5 5
+    classDef kubernetes fill:#326ce5,stroke:#333,stroke-width:1px,color:white
+    classDef service fill:#389826,stroke:#333,stroke-width:1px,color:white
+    classDef config fill:#ffd54f,stroke:#333,stroke-width:1px
+    
+    %% Internet client
+    Client[/"🌐 Internet Client 
+    (Browser/User)"/]
+    
+    %% Cloudflare components
+    CloudflareDNS["☁️ Cloudflare
+    DNS + Edge Network
+    *.linuxcloudhacks.ovh"]
+    
+    %% Cloudflare Tunnel
+    CFTunnel["🔒 Cloudflare Tunnel
+    (Encrypted Connection)"]
+    
+    %% Kubernetes Cluster boundary
+    subgraph K8sCluster ["Kubernetes Cluster"]
+        direction TB
+        
+        %% Configuration and secrets
+        subgraph Config ["Configuration"]
+            direction LR
+            CFConfig["⚙️ ConfigMap
+            Tunnel Configuration"]
+            CFSecret["🔑 Secret
+            Tunnel Credentials"]
+        end
+        
+        %% Node level
+        subgraph Nodes ["Kubernetes Nodes"]
+            direction TB
+            Node1["🖥️ K8s Node 1"]
+            Node2["🖥️ K8s Node 2"]
+            Node3["🖥️ K8s Node 3"]
+        end
+        
+        %% cloudflared DaemonSet
+        subgraph CFDaemonSet ["cloudflared DaemonSet"]
+            direction TB
+            CFD1["🔒 cloudflared Pod"]
+            CFD2["🔒 cloudflared Pod"]
+            CFD3["🔒 cloudflared Pod"]
+        end
+        
+        %% Traefik Ingress
+        Traefik["🚦 Traefik
+        Ingress Controller"]
+        
+        %% Application Services
+        subgraph Apps ["Application Services"]
+            direction LR
+            WebApp["💻 Web Application"]
+            API["🔌 API Service"]
+            OtherApp["📱 Other Services"]
+        end
+        
+        %% Connect nodes to cloudflared pods
+        Node1 --- CFD1
+        Node2 --- CFD2
+        Node3 --- CFD3
+        
+        %% Connect configuration to cloudflared
+        Config -- "Used by" --> CFDaemonSet
+        
+        %% Connect cloudflared to Traefik
+        CFD1 -- "Forward Traffic" --> Traefik
+        CFD2 -- "Forward Traffic" --> Traefik
+        CFD3 -- "Forward Traffic" --> Traefik
+        
+        %% Connect Traefik to services
+        Traefik -- "Route to" --> Apps
+    end
+    
+    %% External connections
+    Client -- "HTTPS Request" --> CloudflareDNS
+    CloudflareDNS -- "Secure Connection" --> CFTunnel
+    CFTunnel -- "Encrypted Traffic" --> CFDaemonSet
+    
+    %% No Public IP Needed label
+    NoPublicIP["✅ No LoadBalancer
+    ✅ No Public IP Needed
+    ✅ All traffic encrypted"]
+    
+    %% Apply styles
+    class Client internet
+    class CloudflareDNS cloudflare
+    class CFTunnel tunnel
+    class K8sCluster,Nodes,Node1,Node2,Node3,Traefik kubernetes
+    class CFD1,CFD2,CFD3,CFDaemonSet tunnel
+    class WebApp,API,OtherApp,Apps service
+    class CFConfig,CFSecret,Config config
+    class NoPublicIP internet
